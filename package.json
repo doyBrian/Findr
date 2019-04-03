@@ -1,0 +1,24 @@
+{
+  "name": "Findr",
+  "version": "1.0.0",
+  "description": "A compatibility-based \"FriendFinder\" application aka a dating app",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/doyBrian/Findr.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/doyBrian/Findr/issues"
+  },
+  "homepage": "https://github.com/doyBrian/Findr#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}

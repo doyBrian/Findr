@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dating App</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Germania+One" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <style>
+    body, html, header, .view {
+    height: 100%;
+    }
+
+    header {
+        color: yellow;
+    }
+
+    .view {
+    /* The image used */
+    background-image: url("https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/ziDhOLv/the-end-title-with-scary-font-and-red-smoke-in-the-background-fades-and-zooms-in-with-alpha-cannel-in-4k-resolution_nkrt9ovu_thumbnail-full01.png");
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    }
+
+    body {
+    font-family: 'Germania One', cursive !important;
+
+    }
+
+    .mask {
+        padding-top: 50px;
+    }
+
+    .navbar {
+    background: transparent !important;
+    height: 85px;
+    margin-top: 15px;
+    }
+
+    .navbar a {
+    font-family: 'Germania One', cursive;
+    color: greenyellow !important;
+    font-size: 60px;
+    }
+
+    h1, h6, label {
+    color: greenyellow;
+    }
+
+    h1 {
+    font-size: 40px;
+    padding-top: 5px;
+    margin-bottom: 10px;
+    }
+
+    h6 {
+    font-size: 20px;
+    }
+
+    label {
+        padding-right: 10px;
+    }
+
+    button {
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+    
+    #myModal {
+      color: black;
+    }
+
+    #myModal > img {
+      margin: 0 auto;
+    }
+
+    </style>
+</head>
+<body>    
+    <iframe src="bensound-creepy.mp3" allow="autoplay" style="display:none" id="iframeAudio"></iframe>
+    <audio autoplay loop  id="playAudio"><source src="bensound-creepy.mp3"></audio> 
+    
+      <!-- Image and text -->
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
+        <div class="container">
+            <a class="navbar-brand" href="*">
+            <img src="https://i.pinimg.com/originals/9c/73/5d/9c735dad4d87d34be5061af532d0f95d.jpg" width="60" height="82" class="d-inline-block align-top" alt="Villain Mask logo">
+            Findr</a>
+        </div>
+    </nav>
+    <div class="view">
+        <!-- Mask & flexbox options-->
+        <div class="mask align-items-center">
+              <!-- Content -->
+              <div class="container">
+                <!--Grid row-->
+                <div class="row">
+                  <!--Grid column-->
+                  <div  id="questionA" class="col-md-12 text-center mt-xl-5 mb-5">
+                      <h1 class="h1-responsive font-weight-bold mt-sm-5 animated pulse infinite">Before we start...</h1>
+                      <h6 class="mb-4">Which gender are you looking to be matched with?</h6>
+                      <div id="form1" class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOption" id="inlineRadio0" value="male">
+                        <label class="form-check-label" for="inlineRadio0">Man</label>
+                        <input class="form-check-input" type="radio" name="inlineRadioOption" id="inlineRadio0" value="female">
+                        <label class="form-check-label" for="inlineRadio0">Woman</label>
+                        <input class="form-check-input" type="radio" name="inlineRadioOption" id="inlineRadio0" value="both">
+                        <label class="form-check-label" for="inlineRadio0">Swing Both Ways</label>
+                      </div>
+                    <br>
+                    <a href="#">
+                      <button id="submit" type="button" class="btn btn-warning">Submit</button>
+                    </a>  
+                      <div class="col-md-12 col-xl-5 mt-xl-5">
+                        <img src="https://ya-webdesign.com/images/disney-villains-png-1.png" class="rounded-lg animated fadeInUp" style="margin-top: 25px;">
+                      </div>
+                  </div>
+
+                  <div id="questions" style="display:none;" class="col-md-12 text-center mt-xl-5 mb-5">
+                    <h1 id="title" class="h1-responsive font-weight-bold mt-sm-5 animated infinite pulse"></h1>
+                    <h6 id="question" class="mb-4"></h6>
+                    <div  id="form2" class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="inlineRadioOption" id="inlineRadio1" value="1">
+                      <label id="option1" class="form-check-label" for="inlineRadio1"></label>
+                      <input class="form-check-input" type="radio" name="inlineRadioOption" id="inlineRadio1" value="2">
+                      <label id="option2" class="form-check-label" for="inlineRadio1"></label>
+                      <input class="form-check-input" type="radio" name="inlineRadioOption" id="inlineRadio1" value="3">
+                      <label id="option3" class="form-check-label" for="inlineRadio1"></label>
+                      <input class="form-check-input" type="radio" name="inlineRadioOption" id="inlineRadio1" value="4">
+                      <label id="option4" class="form-check-label" for="inlineRadio1"></label>
+                      <input class="form-check-input" type="radio" name="inlineRadioOption" id="inlineRadio1" value="5">
+                      <label id="option5" class="form-check-label" for="inlineRadio1"></label>
+                    </div>
+                    <br>
+                    <a href="#">
+                      <button id="submit2" type="button" class="btn btn-warning">Submit</button>
+                    </a>  
+                    <div id="image" class="col-md-12 col-xl-5 mt-xl-5">
+                      <img src="https://ya-webdesign.com/images/disney-villains-png-1.png" class="img-fluid rounded-lg" style="margin-top: 25px;">
+                    </div>
+                    <div id="candidates" class="col-md-12 col-xl-5 mt-xl-5">
+                    </div>
+                  </div>
+
+                  <!-- Modal -->
+                  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h2 class="modal-title" id="name">You have been matched with...</h2>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div id="picture" class="modal-body">
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+      
+                </div>
+              </div>
+        </div>
+    </div>
+
+</header>   
+
+<script type="text/javascript">
+
+$('#myModal').modal('hide');
+
+const questions_array = [
+  {question: "What is your preferred body type?",
+   choices: ["Skin/Bones", "Slim", "Average Body", "Some Meat", "Meaty"]
+  },
+  {question: "What is your hair preference?",
+   choices: ["Bald/No Hair", "Very Short", "Average Hair Length", "Long Hair", "Very Long/Hairy"]
+  },
+  {question: "What socio-economic status does your match need to have?",
+   choices: ["Worthless", "Below Average Status", "Average Status", "Holds Some Kind of Position/Rich", "Royalty"]
+  },
+  {question: "Do you seek someone with magical powers?",
+   choices: ["No powers", "Can make potions only", "Can cast spells only", "Somewhat powerful", "Very powerful"]
+  },
+  {question: "Are you seeking for a human or non-human?",
+   choices: ["Devil", "Dead", "Non-human", "Part Human", "Human"]
+  },
+  {question: "Prefer an animal lover or have pet/sidekick(s)?",
+   choices: ["No pets/sidekicks", "Just 1 pet/sidekick", "Just 2 pets/sidekicks", "More than 2 pets/sidekicks", "Don't Care about pets/sidekicks"]
+  },
+  {question: "Rate the level of attractiveness you seek.",
+   choices: ["Unimaginably Unattractive", "Somewhat Unattractive", "Average Looks", "Above Average Looks", "Very Attractive"]
+  },
+  {question: "What is your preferred age range?",
+   choices: ["Young", "Adult", "Middle Age", "Old", "Very Old"]
+  },
+  {question: "Please indicate height preference.",
+   choices: ["Short", "Somewhat Short", "Average Height", "Somewhat Tall", "Very Tall"]
+  },
+  {question: "Rate the degree of evilness.",
+   choices: ["A Smidge Evil", "Somewhat Evil", "Evil", "Very Evil", "Satan Evil"]
+  }
+]
+var counter = 0;
+var results = {score: []};
+var looking_for = [];
+
+$("#submit").on("click", function(event) {
+  event.preventDefault();
+
+  results.gender = $("input:checked").val();
+
+  $("#questionA").hide();
+  $("#question").text(questions_array[counter].question);
+  for (let j = 0; j < questions_array[counter].choices.length; j++ )
+    $("#option" + (j+1)).text(questions_array[counter].choices[j]);
+  $("#questions").show();    
+
+  $.get("/api/list/" + results.gender, function(data) {
+    $("#title").html('<p>There are ' + data.length + ' offenders in our database to match you with!');
+  });
+
+});
+
+
+
+$("#submit2").on("click", function(event) {
+    event.preventDefault();
+
+    var response = parseInt($("input:checked").val());
+    results.score.push(response);
+
+    if (counter === 0) {
+      $("#candidates").text('');
+      $("#candidates").append('Filter: ' + questions_array[counter].choices[response-1]);
+      looking_for.push(questions_array[counter].choices[response-1]);
+    }
+    else {
+      $("#candidates").append(', ' + questions_array[counter].choices[response-1]);
+      looking_for.push(questions_array[counter].choices[response-1]);
+    }
+
+    console.log(looking_for);
+    console.log(results);
+
+    $("#question").text('');
+    for (let j = 0; j < questions_array[counter].choices.length; j++)
+      $("#option" + (j+1)).text('');
+    $('input').attr('checked', false);
+
+    counter++;
+
+  if (counter > (questions_array.length - 1)) {
+    $("#title").html('');
+    $("#question").hide();
+    $("#form2").hide();
+    $("#submit2").hide();
+    $("#candidates").hide();
+    $("#image").html('');
+    $("#title").text('Enjoy...while it lusts!');
+    $("#image").html('<img src="http://www.doctordisney.com/wp-content/uploads/2014/06/disney-villains-group.jpg" class="img-fluid rounded-lg" width="600" height="300" style="margin-top: 5px;">');
+
+    $.post("/api/match", results).then(function(data) {
+
+       for (let counter = 0; counter < data.length; counter++) {
+        $("#match").show();
+        $('#myModal').modal('show');
+        $("#picture").append('<br><h5><u>' + data[counter].name + '</u></h5>');
+        $("#picture").append('<br><img src="' + data[counter].image + '" alt="match picture" class="rounded-lg" width="250" height="400" style="margin-top: 15px;"><br>');
+        //if (data.length > 1)
+          //$("#submit3").show();
+        for (let k = 0; k < questions_array.length; k++) {
+          if (k === 0)
+            $("#picture").append('<br><u>Your Match:</u> ' + questions_array[k].choices[(data[counter].score[k])-1]);
+          else 
+            $("#picture").append(', ' + questions_array[k].choices[(data[counter].score[k])-1]);
+        }
+        for (let l = 0; l < questions_array.length; l++) {
+          if (l === 0)
+            $("#picture").append('<br><u>What You Were Looking For:</u> ' + looking_for[l]);
+          else 
+            $("#picture").append(', ' + looking_for[l]);
+        }
+       }
+
+    });
+    } else {
+    $("#question").text(questions_array[counter].question);
+    for (let j = 0; j < questions_array[counter].choices.length; j++ )
+      $("#option" + (j+1)).text(questions_array[counter].choices[j]);
+    }
+  
+});
+
+
+</script>
+
+</body>
+</html>
+
