@@ -121,9 +121,6 @@
                     <a href="#">
                       <button id="submit" type="button" class="btn btn-warning">Submit</button>
                     </a>  
-                      <div class="col-md-12 col-xl-5 mt-xl-5">
-                        <img src="https://ya-webdesign.com/images/disney-villains-png-1.png" class="rounded-lg animated fadeInUp" style="margin-top: 25px;">
-                      </div>
                   </div>
 
                   <div id="questions" style="display:none;" class="col-md-12 text-center mt-xl-5 mb-5">
@@ -145,11 +142,8 @@
                     <a href="#">
                       <button id="submit2" type="button" class="btn btn-warning">Submit</button>
                     </a>  
-                    <div id="image" class="col-md-12 col-xl-5 mt-xl-5">
-                      <img src="https://ya-webdesign.com/images/disney-villains-png-1.png" class="img-fluid rounded-lg" style="margin-top: 25px;">
-                    </div>
-                    <div id="candidates" class="col-md-12 col-xl-5 mt-xl-5">
-                    </div>
+                  </div>
+                  <div id="candidates" class="col-md-12">
                   </div>
 
                   <!-- Modal -->
@@ -268,10 +262,8 @@ $("#submit2").on("click", function(event) {
     $("#question").hide();
     $("#form2").hide();
     $("#submit2").hide();
-    $("#candidates").hide();
-    $("#image").html('');
+    $("#candidates").html('');
     $("#title").text('Enjoy...while it lusts!');
-    $("#image").html('<img src="http://www.doctordisney.com/wp-content/uploads/2014/06/disney-villains-group.jpg" class="img-fluid rounded-lg" width="600" height="300" style="margin-top: 5px;">');
 
     $.post("/api/match", results).then(function(data) {
 
