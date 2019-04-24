@@ -271,7 +271,7 @@ $("#submit2").on("click", function(event) {
         $("#match").show();
         $('#myModal').modal('show');
         $("#picture").append('<br><h5><u>' + data[counter].name + '</u></h5>');
-        $("#picture").append('<br><img src="' + data[counter].image + '" alt="match picture" class="rounded-lg" width="250" height="400" style="margin-top: 15px;"><br>');
+        $("#picture").append('<br><img src="' + data[counter].image + '" alt="match picture" class="rounded-lg" img-fluid style="margin-top: 15px;"><br>');
         //if (data.length > 1)
           //$("#submit3").show();
         for (let k = 0; k < questions_array.length; k++) {
@@ -286,6 +286,7 @@ $("#submit2").on("click", function(event) {
           else 
             $("#picture").append(', ' + looking_for[l]);
         }
+        $("#picture").append('<br><hr>');
        }
 
     });
